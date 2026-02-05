@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nomad Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#050B1A;
+  color:white;
+}
+
+.header{
+  background: linear-gradient(180deg,#0B1D4A,#050B1A);
+  padding:20px;
+  text-align:center;
+}
+
+.header img{
+  width:100%;
+  border-radius:14px;
+}
+
+.logo{
+  font-size:26px;
+  font-weight:700;
+  color:#2F6BFF;
+  margin-top:10px;
+}
+
+.section{
+  padding:20px;
+}
+
+.card{
+  background:#0B1228;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
+  box-shadow:0 0 15px rgba(47,107,255,0.25);
+
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.card.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.card h2{
+  font-size:18px;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.card p{
+  font-size:14px;
+  opacity:0.85;
+}
+
+.price{
+  text-align:center;
+  font-size:28px;
+  font-weight:700;
+  color:#4DA3FF;
+  margin:20px 0;
+
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.price.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.button{
+  display:block;
+  margin:0 auto;
+  width:90%;
+  padding:14px;
+  text-align:center;
+  background:linear-gradient(90deg,#2F6BFF,#4DA3FF);
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  border-radius:14px;
+  font-weight:700;
+  box-shadow:0 0 18px rgba(77,163,255,0.6);
+
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.button.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.footer{
+  text-align:center;
+  font-size:13px;
+  opacity:0.6;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=800&q=80">
+  <div class="logo">📸 NOMAD STUDIO</div>
+  <p>Curso de Fotografia Profissional</p>
+</div>
+
+<div class="section">
+
+  <div class="card">
+    <h2>📷 Aprenda do zero</h2>
+    <p>Mesmo sem experiência, você vai aprender a tirar fotos profissionais usando celular ou câmera.</p>
+  </div>
+
+  <div class="card">
+    <h2>🎓 Conteúdo direto ao ponto</h2>
+    <p>Aulas práticas, sem enrolação, focadas em resultado real.</p>
+  </div>
+
+  <div class="card">
+    <h2>💰 Use para ganhar dinheiro</h2>
+    <p>Aprenda a fotografar para redes sociais, produtos e pessoas.</p>
+  </div>
+
+  <div class="price">🔥 R$ 39,99</div>
+
+  <a href="https://pay.kiwify.com.br/MtrhkdA" class="button">
+    🚀 ACESSAR AGORA
+  </a>
+
+</div>
+
+<div class="footer">
+  🔒 Pagamento seguro via Kiwify
+</div>
+
+<script>
+const elements = document.querySelectorAll('.card, .price, .button');
+
+function showOnScroll() {
+  const triggerBottom = window.innerHeight * 0.9;
+
+  elements.forEach(el => {
+    const boxTop = el.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      el.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
+
+</body>
+  </html>
