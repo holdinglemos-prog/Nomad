@@ -160,16 +160,18 @@ function showOnScroll() {
 
   elements.forEach(el => {
     const boxTop = el.getBoundingClientRect().top;
-
     if (boxTop < triggerBottom) {
       el.classList.add('show');
-    }
+    } 
+    // Se quiser reanimar ao rolar para cima, use else { el.classList.remove('show'); }
   });
 }
 
+// Roda quando rolar
 window.addEventListener('scroll', showOnScroll);
-showOnScroll();
+// Roda ao carregar para mostrar animação inicial
+window.addEventListener('load', showOnScroll);
 </script>
 
 </body>
-  </html>
+</html>
